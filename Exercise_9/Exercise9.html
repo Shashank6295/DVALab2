@@ -4,6 +4,51 @@
     <script src='https://d3js.org/d3.v7.min.js'> </script>
 </head>
 <body>
+    <script> 
+
+        // var w = 100, h = 100;    
+        // var vis = d3.select("body")
+        //             .append("svg")
+        //             .attr("width", w)
+        //             .attr("height", h);
+
+
+       var check=  d3.select('body') 
+                        .append("div") 
+                        .style('width',  '100px') 
+                        .style('height', '100px') 
+                        .style('background-color', 'blue') 
+                        .style('transform', 'scale(1.0)') 
+                        .transition() 
+                        .ease( d3.easeBounce ) 
+                        .duration(1000) 
+                        .style("background-color", "red") 
+                        .style('transform', 'scale(0.5)') 
+
+        var design=  d3.select('body') 
+                        .append("div") 
+                        .style('width',  '200px') 
+                        .style('height', '200px') 
+                        .style('background-color', 'yellow') 
+                        .style('transform', 'scale(1.0)') 
+                        .transition() 
+                        .ease( d3.easeElastic ) 
+                        .duration(1000) 
+                        .style("background-color", "orange") 
+                        .style('transform', 'scale(0.5)') 
+
+        var box=  d3.select('body') 
+                        .append("div") 
+                        .style('width',  '250px') 
+                        .style('height', '250px') 
+                        .style('background-color', 'green') 
+                        .style('transform', 'scale(1.0)') 
+                        .transition() 
+                        .ease( d3.easeCubic ) 
+                        .duration(1000) 
+                        .style("background-color", "violet") 
+                        .style('transform', 'scale(0.5)') 
+</script> 
     
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src='https://d3js.org/d3.v7.min.js'> </script>
+</head>
+<body>
+    <script>
+
+    var svg = d3.select("body")
+                .append("svg")
+                .attr("width", 1000)
+                .attr("height", 1000);
+
+    var mycircle= svg.append('circle')
+                .attr('cx', 100)
+                .attr('cy', 100)
+                .attr('r', 50)
+                .attr('stroke', 'black')
+                .attr('fill', '#008080');
+            
+    
+
+        mycircle
+            .on("mouseover",function(){
+                d3.select(this)
+                    .transition()
+                    .duration(2000)
+                    .ease( d3.easeBounce ) 
+                    .attr("r",75);
+            })
+
+            .on("mouseout",function(){
+                d3.select(this)
+                    .transition()
+                    .duration(2000)
+                    .ease( d3.easeBounce ) 
+                    .attr("r",50);
+            })
+            
+
+    </script>
+   
+</body>
+</html>
