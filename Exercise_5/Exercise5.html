@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src='https://d3js.org/d3.v7.min.js'> </script>
+</head>
+<body>
+    <script>
+
+            var w="500";
+            var h="500";
+            
+            var svg = d3.select("body")
+                        .append("svg")
+                        .attr("width",w)
+                        .attr("height",h);
+
+           var text = svg.append('text')
+                        .attr('x', w/2 + 100)
+                        .attr('y',100)
+                        .attr('text-anchor','middle')
+                        .style('font-family', 'Helvetica')
+                        .style('font-size',20)
+                        .text('pop up text')
+
+                        d3.selectAll("text")
+                                .on("mouseover", function(event){ 
+                                d3.select(this) 
+                                console.log(d3.pointer(event)); 
+                            }) 
+
+    </script>
+    
+</body>
+</html>

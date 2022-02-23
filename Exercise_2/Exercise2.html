@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src='https://d3js.org/d3.v7.min.js'> </script>
 </head>
 <body>
+
+    <style> 
+
+        div{
+            position: relative;
+            display: none;
+        }
+
+        h2 { 
+     
+          padding: 20px; 
+        } 
+           
+        h2:hover + div { 
+          background-color: blue;
+          position: absolute; 
+          display: inline-block; 
+        } 
+        </style> 
+
+        <div>This is hover thing</div>
+    
+        <script>
+            const dataset = [10,12,55,68,29,34,75]
+
+            d3.select("body").selectAll("h2")
+                .data(dataset)
+                .enter()
+                .append("h2")
+                .text(function(datapoint){
+                    return datapoint;
+                });
+
+            
+        </script>
     
 </body>
 </html>
