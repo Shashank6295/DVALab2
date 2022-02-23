@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src='https://d3js.org/d3.v7.min.js'> </script>
+</head>
+<body>
+    
+    <script>
+        var w = 1000;
+        var h = 1000;
+
+        var svg = d3.select("body")
+                        .append('svg')
+                        .attr('width',w)
+                        .attr('height',h)
+
+
+         var mytext = svg.append('text')
+                        .attr('x', w/2 + 100)
+                        .attr('y',100)
+                        .attr('text-anchor','middle')
+                        .style('font-family', 'Helvetica')
+                        .style('font-size','30px')
+                        .style("fill", "#004669")
+                        .text('text will be here')
+
+            mytext
+                .on("mouseover",function(){
+                      d3.select(this)  
+                        .transition()
+                        .duration(500)
+                        .style('font-size','40px')
+                        .style("fill", "#00FFFF")
+                        console.log(event);
+
+                })
+
+            mytext
+                .on("mouseout",function(){
+                    d3.select(this)
+                        .transition()
+                        .duration(500)
+                        .style('font-size','30px')
+                        .style("fill", "#004669");
+                        
+                })
+        
+                        
+    </script>
+
+</body>
+</html>
