@@ -18,14 +18,14 @@
     
     <script> 
         d3.select('body') 
-          .append("div") 
+          .append("div")    // will append a div with the following dimensions
           .style('width',  '100px') 
           .style('height', '100px') 
-          .style('background-color', 'blue') 
-          .transition() 
-          .duration(1000) 
-          .style("background-color", "red")
-          .transition()
+          .style('background-color', 'blue')  // with the color blue
+          .transition()  // will add a transition effect
+          .duration(1000)  // duration of 1 sec
+          .style("background-color", "red") // to change the color red
+          .transition()   // transition again 
           .duration(2000)
           .style("background-color", "green");
         </script> 

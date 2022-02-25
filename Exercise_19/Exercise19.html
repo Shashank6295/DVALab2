@@ -17,9 +17,9 @@
   </h5>
 
     <!-- Add buttons --> 
-    <button onclick="update(data1)">Variable 1</button> 
-    <button onclick="update(data2)">Variable 2</button> 
-    <button onclick="update(data3)">Variable 3</button>
+    <button onclick="update(data1,1)">Variable 1</button> 
+    <button onclick="update(data2,2)">Variable 2</button> 
+    <button onclick="update(data3,3)">Variable 3</button>
  
 <script> 
 // create 2 data_set 
@@ -74,8 +74,9 @@ svg.append("g")
   .call(d3.axisLeft(y)); 
  
 // A function that create / update the plot for a given variable: 
-function update(data) { 
+function update(data,num) { 
  
+    var called = num;
   var u = svg.selectAll("rect") 
                      .data(data) 
  
@@ -88,16 +89,16 @@ function update(data) {
       .attr("y", function(d) { return y(d.value); }) 
       .attr("width", x.bandwidth()) 
       .attr("height", function(d) { return height - y(d.value); }) 
-      .style("fill",function(d){
-          if(d == data1){return "red";}             
-            else if(d == data2){return "blue";}
+      .attr("fill",function(){
+          if(called == 1){return "red";}             
+            else if(called == 2){return "blue";}
                 else {return "green";}         
               
       })
 } 
 
 // Initialize the plot with the first dataset 
-update(data1)
+update(data1,1);
 
  
 </script> 

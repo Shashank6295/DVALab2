@@ -19,10 +19,18 @@
     data values). Note, all the segments should not ‘pop’ out/in but should transition smoothly. 
   </h5>
 
+    <button onclick="update(data1)">Data 1</button>
+    <button onclick="update(data2)">Data 2</button>
+
+
     <script>
           var dataset = { 
                         apples: [5345, 2879, 1997, 2437, 4045], 
                         }; 
+
+          var dataset2 = {
+                        oranges: [4012, 2218, 1463, 3750, 5218],
+                        };
             
             var width = 460, 
                 height = 300, 

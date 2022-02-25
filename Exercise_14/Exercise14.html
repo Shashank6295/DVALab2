@@ -15,66 +15,66 @@
 
 
     <script> 
-        var svg = d3.select("body") 
+        var svg = d3.select("body")         // to append a svg element
             .append("svg") 
             .attr("width", 500) 
             .attr("height", 500); 
      
      
-        var bar1 = svg.append("rect") 
+        var bar1 = svg.append("rect")       // to append the rect bar 1 with the following attributes
             .attr("fill", "orange") 
             .attr("x", 100) 
             .attr("y", 20) 
             .attr("height", 20) 
             .attr("width", 10) 
      
-        var bar2 = svg.append("rect") 
+        var bar2 = svg.append("rect")    // to append the rect bar 2 with the following attributes
             .attr("fill", "green") 
             .attr("x", 120) 
             .attr("y", 20) 
             .attr("height", 20) 
             .attr("width", 10) 
 
-        var bar3 = svg.append("rect")
+        var bar3 = svg.append("rect")    // to append the rect bar 3 with the following attributes
             .attr("fill","red")
             .attr("x", 140)
             .attr("y", 20)
             .attr("height", 20)
             .attr("width", 10)
      
-        update(); 
+        update(); // the below update function will be called
 
 
      
     function update() { 
         bar1.transition() 
-            .ease(d3.easeLinear) 
+            .ease(d3.easeLinear) // bar 1 will have a ease linaer transiton 
             .duration(2000) 
-            .attr("fill","cyan")
-            .attr("height",100) 
+            .attr("fill","cyan") // with color 
+            .attr("height",100)     // with the height 
  
         bar2.transition() 
-            .ease(d3.easeLinear) 
-            .duration(2000) 
-            .delay(2000) 
-            .attr("fill","violet")
+            .ease(d3.easeLinear)  // bar 2 will have a ease linaer transiton 
+            .duration(2000)     
+            .delay(2000)    // will come after a 2 sec delay
+            .attr("fill","violet") // the color
             .attr("height",100) 
                 
 
         bar3.transition() 
-            .ease(d3.easeLinear) 
+            .ease(d3.easeLinear) // bar 3 will have a ease linaer transiton 
             .duration(2000) 
-            .delay(4000) 
-            .attr("fill","indigo")
+            .delay(4000)    // will come after a 4 sec delay
+            .attr("fill","indigo") // color
             .attr("height",100) 
                 
 
         bar1.transition()
-            .ease(d3.easeLinear)
+            .ease(d3.easeLinear)    // bar 1 will have a ease linaer transiton 
             .duration(2000)
-            .delay(6000)
-            .attr("height",20) 
-            .attr("fill","black")
+            .delay(6000)        // delay of 6 sec
+            .attr("height",20) // height 
+            .attr("fill","black")   // color
             console.log("hjiiii")
 
         bar2.transition()

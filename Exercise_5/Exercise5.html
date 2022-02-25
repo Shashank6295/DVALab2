@@ -21,12 +21,12 @@
             var w="500";
             var h="500";
             
-            var svg = d3.select("body")
+            var svg = d3.select("body")             // to create an svg element
                         .append("svg")
                         .attr("width",w)
                         .attr("height",h);
 
-           var text = svg.append('text')
+           var text = svg.append('text')            // to append text
                         .attr('x', w/2 + 100)
                         .attr('y',100)
                         .attr('text-anchor','middle')
@@ -35,7 +35,7 @@
                         .text('pop up text')
 
                         d3.selectAll("text")
-                                .on("mouseover", function(event){ 
+                                .on("mouseover", function(event){   // when mouse comes over the text
                                 d3.select(this) 
                                 console.log(d3.pointer(event)); 
                             }) 
