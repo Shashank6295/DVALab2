@@ -19,12 +19,12 @@
 
     <script>
 
-    var svg = d3.select("body")
+    var svg = d3.select("body")     // to append a svg with the dimensions
                 .append("svg")
                 .attr("width", 1000)
                 .attr("height", 1000);
 
-    var mycircle= svg.append('circle')
+    var mycircle= svg.append('circle')      // to append a circe inside the svg and the following dimensions
                 .attr('cx', 100)
                 .attr('cy', 100)
                 .attr('r', 50)
@@ -34,20 +34,20 @@
     
 
         mycircle
-            .on("mouseover",function(){
+            .on("mouseover",function(){     // when the mouse hovers over the circle
                 d3.select(this)
                     .transition()
                     .duration(2000)
-                    .ease( d3.easeBounce ) 
-                    .attr("r",75);
+                    .ease( d3.easeBounce ) // will have ease bounce effect
+                    .attr("r",75);      // with radius given
             })
 
-            .on("mouseout",function(){
+            .on("mouseout",function(){      // when the mouse hovers out the circle
                 d3.select(this)
                     .transition()
                     .duration(2000)
-                    .ease( d3.easeBounce ) 
-                    .attr("r",50);
+                    .ease( d3.easeBounce ) // with ease bounce effect 
+                    .attr("r",50);      // with the radius
             })
     </script>
    

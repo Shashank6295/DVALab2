@@ -15,7 +15,7 @@
     styles). 
   </h5>
     <script> 
-        d3.select('body') 
+        d3.select('body')     // for the the inital div
           .append('div') 
           .style('width', '100px') 
           .style('height', '20px') 
@@ -23,12 +23,12 @@
           .style('stroke-width',5)
           .style('background-color', 'green'); 
      
-        d3.selectAll("div") 
-          .on("mouseover", function(event){ 
+        d3.selectAll("div")           // To select the div
+          .on("mouseover", function(event){       // when mouse hovers over the div
               d3.select(this) 
-                .transition()
-                .duration(500)
-                .style("background-color", "red")
+                .transition()       // for transition effect
+                .duration(500)      
+                .style("background-color", "red")   // for changing the background color of div
                 .style('width','120px')
                 .style('height','40px')
                 .attr('stroke','black')
@@ -36,13 +36,13 @@
                 
                 // Get current event info 
           // Note: d3.event  (event) passed as the first argument to all listeners 
-          console.log(event); 
+          console.log(event);   
  
         // Get x & y co-ordinates 
         // Note: d3.mouse was removed in d3v6, you should use d3.pointer(event) 
         console.log(d3.pointer(event)); 
         }) 
-        .on("mouseout", function(){ 
+        .on("mouseout", function(){   // When the mouse moves out of the div 
         d3.select(this) 
         .transition()
         .duration(500)

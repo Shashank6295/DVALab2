@@ -18,20 +18,20 @@
     <script> 
     
         d3.select('body') 
-          .append("div") 
+          .append("div") // to append a div with the following dimensions
           .style('width',  '200px') 
           .style('height', '200px') 
-          .style('background-color', 'blue') 
+          .style('background-color', 'blue') // with the color blue
           .transition() 
           .duration(1000) 
           .style('background-color', 'red')
-          .style('width','50px')
-          .style('height','50px')
+          .style('width','50px')  // this will chnage the width 
+          .style('height','50px') // will chnage the hight of the div
           .transition()
-          .duration(2000)
-          .style('background-color', 'green')
-          .style('width','400px')
-          .style('height','400px');
+          .duration(2000) // the duration will be 2 sec
+          .style('background-color', 'green') // will chnage the color
+          .style('width','400px') // will chnage the width
+          .style('height','400px');// will chnage the height
         </script> 
 
 </body>

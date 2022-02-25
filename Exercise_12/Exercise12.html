@@ -15,27 +15,27 @@
 
 
     <script> 
-        var svg = d3.select("body") 
+        var svg = d3.select("body")         // to create an svg element
             .append("svg") 
             .attr("width", 500) 
             .attr("height", 500); 
      
      
-        var bar1 = svg.append("rect") 
+        var bar1 = svg.append("rect")   // to append the bar with following attributes
             .attr("fill", "blue") 
             .attr("x", 100) 
             .attr("y", 20) 
             .attr("height", 20) 
             .attr("width", 10) 
      
-        var bar2 = svg.append("rect") 
+        var bar2 = svg.append("rect") // to append the bar 2 with following attributes
             .attr("fill", "blue") 
             .attr("x", 120) 
             .attr("y", 20) 
             .attr("height", 20) 
             .attr("width", 10) 
 
-        var bar3 = svg.append("rect")
+        var bar3 = svg.append("rect") // to append the bar 3 with following attributes
             .attr("fill","red")
             .attr("x", 140)
             .attr("y", 20)
@@ -45,22 +45,22 @@
         update(); 
      
     function update() { 
-        bar1.transition() 
-            .ease(d3.easeLinear) 
-            .duration(2000) 
+        bar1.transition()  // bar 1 will have the below transition
+            .ease(d3.easeLinear)    // with ease Linear  effect
+            .duration(2000)     // duration of 2 sec
         .attr("height",100) 
  
-        bar2.transition() 
-            .ease(d3.easeLinear) 
+        bar2.transition()  // bar 2 will have the below transition
+            .ease(d3.easeLinear) // with ease Linear  effect
             .duration(2000) 
-            .delay(2000) 
+            .delay(2000)    // delay with 2 sec
             .attr("height",100) 
                 
 
-        bar3.transition() 
-            .ease(d3.easeLinear) 
+        bar3.transition() // bar 3 will have the below transition
+            .ease(d3.easeLinear) // with ease Linear  effect
             .duration(2000) 
-            .delay(4000) 
+            .delay(4000)        // delay 4 sec
             .attr("height",100) 
                 } 
 </script> 

@@ -19,13 +19,13 @@
         var w = 1000;
         var h = 1000;
 
-        var svg = d3.select("body")
+        var svg = d3.select("body")     // to create an svg element
                         .append('svg')
                         .attr('width',w)
                         .attr('height',h)
 
 
-         var mytext = svg.append('text')
+         var mytext = svg.append('text')         // to append the text
                         .attr('x', w/2 + 100)
                         .attr('y',100)
                         .attr('text-anchor','middle')
@@ -35,23 +35,23 @@
                         .text('text will be here')
 
             mytext
-                .on("mouseover",function(){
+                .on("mouseover",function(){     // when mouse hovers over the text
                       d3.select(this)  
-                        .transition()
-                        .duration(500)
-                        .style('font-size','40px')
-                        .style("fill", "#00FFFF")
-                        console.log(event);
+                        .transition()       // will have a transtion 
+                        .duration(500)      // duration of 0.5 sec
+                        .style('font-size','40px')  // with font size
+                        .style("fill", "#00FFFF")   // color
+                        console.log(event);     // will show the log event when the mouse is over the circle
 
                 })
 
             mytext
-                .on("mouseout",function(){
+                .on("mouseout",function(){      // when mouse hovers out the text
                     d3.select(this)
                         .transition()
-                        .duration(500)
-                        .style('font-size','30px')
-                        .style("fill", "#004669");
+                        .duration(500)      // duration of 0.5 sec
+                        .style('font-size','30px')      // will have a size 
+                        .style("fill", "#004669");      // the following color
                         
                 })
         

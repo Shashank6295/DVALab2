@@ -18,37 +18,37 @@
     <script> 
     
        var check=  d3.select('body') 
-                        .append("div") 
+                        .append("div")      // to append a div with the follwing attributes for the 1st box
                         .style('width',  '100px') 
                         .style('height', '100px') 
                         .style('background-color', 'blue') 
                         .style('transform', 'scale(1.0)') 
                         .transition() 
-                        .ease( d3.easeBounce ) 
+                        .ease( d3.easeBounce ) // will have a transtion with ease bounce effect
                         .duration(1000) 
                         .style("background-color", "red") 
                         .style('transform', 'scale(0.5)') 
 
-        var design=  d3.select('body') 
+        var design=  d3.select('body') // to append a div with the follwing attributes for the 2nd box
                         .append("div") 
                         .style('width',  '200px') 
                         .style('height', '200px') 
                         .style('background-color', 'yellow') 
                         .style('transform', 'scale(1.0)') 
                         .transition() 
-                        .ease( d3.easeElastic ) 
-                        .duration(1000) 
+                        .ease( d3.easeElastic ) // will have a ease elastic effect
+                        .duration(1000) //duration of 1 sec
                         .style("background-color", "orange") 
-                        .style('transform', 'scale(0.5)') 
+                        .style('transform', 'scale(0.5)') // to scale the size
 
-        var box=  d3.select('body') 
+        var box=  d3.select('body') // to append a div with the follwing attributes for the 3rd box
                         .append("div") 
                         .style('width',  '250px') 
                         .style('height', '250px') 
                         .style('background-color', 'green') 
                         .style('transform', 'scale(1.0)') 
                         .transition() 
-                        .ease( d3.easeCubic ) 
+                        .ease( d3.easeCubic ) // will have ease cubix effect
                         .duration(1000) 
                         .style("background-color", "violet") 
                         .style('transform', 'scale(0.5)') 

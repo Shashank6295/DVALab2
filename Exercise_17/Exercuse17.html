@@ -13,9 +13,9 @@
       </h5>
 
 <style>
-.bar {
+/* .bar {
  fill: steelblue;
-}
+} */
 .highlight {
  fill: orange;
 }
@@ -67,6 +67,8 @@
                 .attr("stroke", "black")
                 .text("Stock Price");
 
+                var max = 70;
+                var min = 47;
 
                 g.selectAll(".bar")
                 .data(data)
@@ -83,6 +85,12 @@
                 .duration(400)
                 .delay(function (d, i) {
                 return i * 50;
+                })
+                .attr("fill", function(d){ // to change the bar color according to value
+                    if(d.value > max){ return "red" ;}
+                    else if(d.value< min) { return "blue"}
+                    else { return "yellow"}
+
                 })
                 .attr("height", function(d) { return height - y(d.value); });
                 });

@@ -20,17 +20,17 @@
 
 
     <style> 
-        .pulse { 
-          border: 4px solid blue; 
-          fill: lightblue; 
-          stroke: purple; 
+        .pulse {                              /* The style is used to pulse class    */
+          border: 4px solid blue;           /* will have a border color of blue with 4px size */
+          fill: lightblue;                  /* with the colour blue */
+          stroke: purple;                   
           -webkit-transform: scale(1); 
-          -webkit-transform-origin: 50% 50%; 
+          -webkit-transform-origin: 50% 50%; /* will postion the pusle */
           transform: scale(1); 
           transform-origin: 10% 100%; 
         } 
          
-        .pulse:hover 
+        .pulse:hover                /* when the mouse hover over  */
         { 
           -webkit-animation-name: pulsar; 
           -webkit-animation-duration: 1s; 
@@ -80,7 +80,7 @@
                 .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
 
-        svg.append('text')
+        svg.append('text')                  // TO append the text 
           .attr('x', width/2 + 100)
           .attr('y',100)
           .attr('text-anchor','middle')
@@ -89,7 +89,7 @@
           .text('Line Chart With Pulse Animation')
           
           
-        svg.append('text')  
+        svg.append('text')              // To append text
           .attr('x', width/2 + 100)
           .attr('y', height - 15 + 150)
           .attr('text-anchor','middle')
@@ -97,20 +97,20 @@
           .style('font-size', 12)
           .text('X value');
 
-        svg.append('text')
+        svg.append('text')              // TO append text
         .attr('text-anchor', 'middle')
         .attr('transform', 'translate(60,' + height + ')rotate(-90)')
         .text('Y Value');
 
-        g.append("g")
+        g.append("g")               // For appending the X Axis of the scale
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(xScale));
 
-        g.append("g")
+        g.append("g")               // For appending the Y Axis of the scale
             .call(d3.axisLeft(yScale));
 
 
-        svg.append('g')
+        svg.append('g')         // To append the DOT on the path
             .selectAll("dot")
             .data(dataset1)
             .enter()
@@ -127,7 +127,7 @@
         .y(function(d) { return yScale(d[1]); }) 
         .curve(d3.curveMonotoneX)
        
-        svg.append("path")
+        svg.append("path")          // To append the line on the graph
         .datum(dataset1) 
         .attr("class", "line") 
         .attr("transform", "translate(" + 100 + "," + 100 + ")")

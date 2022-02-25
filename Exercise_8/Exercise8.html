@@ -20,22 +20,22 @@
   
 
        mydiv =  d3.select('body')
-                    .append('div')
+                    .append('div')      // will append a div with the follwing dimensions and style
                     .style("width","300px")
                     .style("height","300px")
                     .style("background-color","blue");    
 
         mydiv
-            .on("mouseover",function(){
+            .on("mouseover",function(){     // when eht mouse is over the div
                 d3.select(this)
-                    .transition()
-                    .duration(1000)
+                    .transition()       // will have a transtion effect
+                    .duration(1000)     // of duration 1 sec and the following styles
                     .style("width","500px")
                     .style("height","500px")
                     .style("background-color","orange");
             })
         
-            .on("mouseout",function(){
+            .on("mouseout",function(){      // when the mouse comes out of the div it will have the following attributes
                 d3.select(this)
                     .transition()
                     .duration(1000)

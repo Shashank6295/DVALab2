@@ -20,12 +20,12 @@
 
     <script>
 
-    var svg = d3.select("body")
+    var svg = d3.select("body") // TO create a svg element of the size
                 .append("svg")
                 .attr("width", 1000)
                 .attr("height", 1000);
 
-    var mycircle= svg.append('circle')
+    var mycircle= svg.append('circle') // to create a circle with the dimensions
                 .attr('cx', 100)
                 .attr('cy', 100)
                 .attr('r', 50)
@@ -34,19 +34,19 @@
             
     
 
-        mycircle
-            .on("mouseover",function(){
+        mycircle            // the var in which the the circle is stored
+            .on("mouseover",function(){     // when the mouse hovers over the circle
                 d3.select(this)
                     .transition()
-                    .duration(3000)
-                    .attr("r",100);
+                    .duration(3000)     // will transition with duration of 3 sec
+                    .attr("r",100);     // will change the radius
             })
 
-            .on("mouseout",function(){
+            .on("mouseout",function(){      // when the mouse hovers out
                 d3.select(this)
                     .transition()
                     .duration(2000)
-                    .attr("r",50);
+                    .attr("r",50); // will chnage the radius to the original value
             })
             
 

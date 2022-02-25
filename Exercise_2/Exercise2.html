@@ -16,17 +16,17 @@
 
     <style> 
 
-        div{
+        div{                    /* style for the div */
             position: relative;
-            display: none;
+            display: none;      /* so that the div doest show at start */
         }
 
         h2 { 
      
-          padding: 20px; 
+          padding: 20px;        /* for givin padding */
         } 
            
-        h2:hover + div { 
+        h2:hover + div {        /* when mouse hovers over the h2 */
           background-color: blue;
           position: absolute; 
           display: inline-block; 
@@ -38,7 +38,7 @@
         <script>
             const dataset = [10,12,55,68,29,34,75]
 
-            d3.select("body").selectAll("h2")
+            d3.select("body").selectAll("h2")       // To dynamiclly add elements 
                 .data(dataset)
                 .enter()
                 .append("h2")
