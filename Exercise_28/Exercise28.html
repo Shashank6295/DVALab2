@@ -30,12 +30,12 @@
         }) 
          
         var simulation = d3.forceSimulation(nodes) 
-              .force('charge', d3.forceManyBody().strength(5)) 
-              .force('center', d3.forceCenter(width / 2, height / 2)) 
-              .force('collision', d3.forceCollide().radius(function(d) { 
+              .force('charge', d3.forceManyBody().strength(5)) // for making elements attarct one another
+              .force('center', d3.forceCenter(width / 2, height / 2))  // for setting center of gravity
+              .force('collision', d3.forceCollide().radius(function(d) {  // forcecollide is used to stop cirular elmts from overlapping
                   return d.radius 
               })) 
-              .on('tick', ticked); 
+              .on('tick', ticked); // ticked function called
          
         function ticked() { 
           var u = d3.select('svg') 
@@ -43,7 +43,7 @@
             .data(nodes) 
             .join('circle') 
             .attr("fill", function () {
-                return "hsl(" + Math.random() * 180 + ",100%,50%)";
+                return "hsl(" + Math.random() * 180 + ",100%,50%)"; // giving color to circles
                     }) 
             .attr('r', function(d) { 
               return d.radius 

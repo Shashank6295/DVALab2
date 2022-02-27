@@ -76,7 +76,7 @@ svg.append("g")
 // A function that create / update the plot for a given variable: 
 function update(data,num) { 
  
-    var called = num;
+  var called = num; // argument to a new variable 
   var u = svg.selectAll("rect") 
                      .data(data) 
  
@@ -89,8 +89,8 @@ function update(data,num) {
       .attr("y", function(d) { return y(d.value); }) 
       .attr("width", x.bandwidth()) 
       .attr("height", function(d) { return height - y(d.value); }) 
-      .attr("fill",function(){
-          if(called == 1){return "red";}             
+      .attr("fill",function(){      // to change the color of the bars
+          if(called == 1){return "red";}              
             else if(called == 2){return "blue";}
                 else {return "green";}         
               
